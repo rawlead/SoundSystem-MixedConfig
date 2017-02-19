@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--<bean id="compactDisc" class="soundsystem.pnamespace.BlankDisc"-->
+          <!--p:title="Sgt. Pepper's Lonely Hearts Club"-->
+          <!--p:artist="The Beatles" >-->
+        <!--<property name="tracks">-->
+            <!--<list>-->
+                <!--<value>Sgt. Pepper's Lonely Hearts Club</value>-->
+                <!--<value>With a little help from my friends</value>-->
+                <!--<value>Lucy in the Sky with the Diamonds</value>-->
+                <!--<value>Getting Better</value>-->
+                <!--<value>Fixing a Hole</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+    <!--wiring a collection with p-namespace require a util-namespace for example util:list -->
+    <util:list id="trackList" >
+        <value>Sgt. Pepper's Lonely Hearts Club</value>
+        <value>With a little help from my friends</value>
+        <value>Lucy in the Sky with the Diamonds</value>
+        <value>Getting Better</value>
+        <value>Fixing a Hole</value>
+    </util:list>
+
+    <bean id="compactDisc" class="soundsystem.pnamespace.BlankDisc"
+          p:title="Sgt. Pepper's Lonely Hearts Club"
+          p:artist="The Beatles"
+          p:tracks-ref="trackList" />
+
+
+
+</beans>

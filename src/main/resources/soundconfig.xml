@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="compactDisc" class="soundsystem.xmlconfig.BlankDisc">
+        <constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band" />
+        <constructor-arg value="The Beatles" />
+    </bean>
+
+    <bean id="cdPlayer" class="soundsystem.xmlconfig.CDPlayer">
+        <property name="compactDisc" ref="compactDisc" />
+    </bean>
+
+    <!--null to collections BlankDisc-->
+    <!--<bean id="compactDisc" class="soundsystem.collections.BlankDisc">-->
+    <!--<constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band"/>-->
+    <!--<constructor-arg value="The Beatles" />-->
+    <!--<constructor-arg><null/></constructor-arg>-->
+    <!--</bean>-->
+
+
+    <!--pass a value-list to constructor-->
+    <!--<bean id="compactDisc" class="soundsystem.collections.BlankDisc">-->
+    <!--<constructor-arg value="Sgt. Pepper's Lonely Hearts Club Band"/>-->
+    <!--<constructor-arg value="The Beatles" />-->
+    <!--<constructor-arg>-->
+    <!--<list>-->
+    <!--<value>Sgt. Pepper' Lonely Hearts</value>-->
+    <!--<value>With a Little Help</value>-->
+    <!--<value>Lucy in the Sky</value>-->
+    <!--</list>-->
+    <!--</constructor-arg>-->
+    <!--</bean>-->
+
+    <!--pass a ref-list to constructor-->
+    <!--<bean id="beatlesDiscography" class="soundsystem.collections.Discography">-->
+    <!--<constructor-arg value="The Beatles" />-->
+    <!--<constructor-arg>-->
+    <!--<list>  &lt;!&ndash;<set>&ndash;&gt;-->
+    <!--<ref bean="sgtPeppers" />-->
+    <!--<ref bean="whiteAlbum" />-->
+    <!--<ref bean="hardDaysNight" />-->
+    <!--<ref bean="revolver"/>-->
+    <!--</list> &lt;!&ndash;</set>&ndash;&gt;-->
+    <!--</constructor-arg>-->
+    <!--</bean>-->
+
+    <!--<bean id="hardDaysNight"/>-->
+    <!--<bean id="revolver"/>-->
+    <!--<bean id="whiteAlbum"/>-->
+    <!--<bean id="sgtPeppers"/>-->
+
+
+
+    <!--00000000000000000000000@@@@@@@000@)0@)@)@)@)@))@)@@))@)@)@)@)@))@)@))@)@)@)@)@)@)@)@))@@))@)@)@)@)@)@)@))@)@)@)@-->
+    <!--c-namespace  injection-->
+
+
+
+    <!--<bean id="compactDisc" class="soundsystem.SgtPeppers"/> -->
+
+    <!--<bean id="cdPlayer" class="soundsystem.CDPlayer"-->
+    <!--c:cd-ref="compactDisc"/>-->
+
+    <!--<bean id="compactDisc"-->
+    <!--class="soundsystem.BlankDisc"-->
+    <!--c:title="Sgt. Pepper's Lonely Hearts Club Band"-->
+    <!--c:artist="The Beatles" />-->
+
+    <!--<bean id="compactDisc"-->
+    <!--class="soundsystem.BlankDisc"-->
+    <!--c:_0="Sgt. Pepper's Lonely Hearts Club Band"-->
+    <!--c:_1="The Beatles" />-->
+
+
+</beans>
